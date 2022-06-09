@@ -1,5 +1,5 @@
-from pages.home_page import HomePage
-from tests.test_data import TestData
+from pages.homepage import HomePage
+from tests.testdata import TestData
 
 from selenium import webdriver
 import unittest

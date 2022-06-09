@@ -1,4 +1,4 @@
-from tests.base_test import BaseTest
+from tests.basetest import BaseTest
 from time import sleep
 import unittest
 

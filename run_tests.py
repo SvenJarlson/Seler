@@ -1,5 +1,5 @@
 import unittest
-from tests.login_test import LoginTest
+from tests.logintest import LoginTest
 
 # Download tests, that you want to run
 login_test = unittest.TestLoader().loadTestsFromTestCase(LoginTest)

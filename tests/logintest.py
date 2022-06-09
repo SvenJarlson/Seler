@@ -1,4 +1,4 @@
-from tests.base_test import BaseTest
+from tests.basetest import BaseTest
 from time import sleep
 from pages.locators import HomePageLocators
 import unittest
@@ -14,6 +14,9 @@ class LoginTest(BaseTest):
         TC 002 : User is not registered
         """
         home_page = self.home_page
+        # 0. Locate the login panel
+        el1 = self.driver.find_element(*HomePageLocators.HOVER_ACCOUNT)
+        el1.click()
         # 1. Locate the box for e-mail
         el = self.driver.find_element(*HomePageLocators.LOGIN_BOX) 
         # 2. Pun in an email
