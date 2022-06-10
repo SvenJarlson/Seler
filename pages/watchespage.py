@@ -2,6 +2,7 @@ from pages.basepage import BasePage
 from pages.locators import SelectWatchesLocators
 from time import sleep
 
+
 class ProductsPage(BasePage):
 
     def select_watches_section(self):

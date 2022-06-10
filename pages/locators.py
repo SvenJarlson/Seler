@@ -45,3 +45,13 @@ class SelectWatchesLocators:
     FIND_IN_CART = (By.XPATH, "//input[@ae_page_area='Item_card']")
     # locate price
     GRAB_PRICE = (By.XPATH, "//div[@class='total-price']//dd")
+
+
+class PrivacySettingsLocators:
+    """
+    Locators used to access Privacy settings page
+    """
+    # privacy settings page
+    PRIVACY_PAGE = (By.XPATH, "//a[@data-spm-anchor-id='a2g0o.productlist.1000001.6']")
+    # text section for testing
+    TEXT_SECTIONS = (By.CLASS_NAME, "privacy-policy-desc")
