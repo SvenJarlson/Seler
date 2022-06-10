@@ -1,5 +1,6 @@
 from pages.homepage import HomePage
 from tests.testdata import TestData
+from pages.watchespage import ProductsPage
 
 from selenium import webdriver
 import unittest
@@ -13,10 +14,11 @@ class BaseTest(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get("https://pl.aliexpress.com/")
         self.driver.implicitly_wait(10)
-        # Stworzyć instancję klasy HomePage
-        # Aby uzyskać dostęp do mechanizmów tej strony
-        self.home_page = HomePage(self.driver)
-        self.test_data = TestData()
+        # Create a class HomePage
+        # To gain access to the page's mechanisms
+        self.homepage = HomePage(self.driver)
+        self.watchespage = ProductsPage(self.driver)
+        self.testdata = TestData()
 
     def tearDown(self):
         self.driver.quit()

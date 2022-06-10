@@ -1,5 +1,6 @@
 from pages.basepage import BasePage
 from pages.locators import PopUpsLocators
+from time import sleep
 
 
 class HomePage(BasePage):
@@ -10,6 +11,7 @@ class HomePage(BasePage):
         """
         Clicks close on the popups
         """
+        sleep(4)
         # 1. conditionally locate first pop-up and click it
         if self.driver.find_element(*PopUpsLocators.COOKIES_BTN):
             el = self.driver.find_element(*PopUpsLocators.COOKIES_BTN)
@@ -28,6 +30,8 @@ class HomePage(BasePage):
             el2.click()
         else:
             pass
+        # return this page
+        return HomePage(self.driver)
 
     def _verify_page(self):
         """
