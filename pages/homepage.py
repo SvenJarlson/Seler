@@ -1,5 +1,6 @@
 from pages.basepage import BasePage
 from pages.locators import PopUpsLocators
+from pages.locators import SearchPageLocators
 from time import sleep
 
 
@@ -38,3 +39,22 @@ class HomePage(BasePage):
         Verifies Home Page
         """
         pass
+
+    def input_for_search_product(self):
+        # locate the search input
+        inp = self.driver.find_element(*SearchPageLocators.SEARCH_INPUT)
+        # put in the product name
+        inp.send_keys("zegarek")
+
+    def search_product(self):
+        # locate the search button
+        btn = self.driver.find_element(*SearchPageLocators.SEARCH_BUTTON)
+        # click the button
+        btn.click()
+
+    def locate_results(self):
+        # locate the results
+        results = self.driver.find_elements(*SearchPageLocators.SEARCH_RESULTS)
+        for i in range(len(results)):
+            results[i] = results[i].get_attribute('textContent')
+        return results

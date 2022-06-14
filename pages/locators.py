@@ -55,3 +55,15 @@ class PrivacySettingsLocators:
     PRIVACY_PAGE = (By.XPATH, "//a[@data-spm-anchor-id='a2g0o.productlist.1000001.6']")
     # text section for testing
     TEXT_SECTIONS = (By.CLASS_NAME, "privacy-policy-desc")
+
+
+class SearchPageLocators:
+    """
+    Locators used to access search bar
+    """
+    # search bar input
+    SEARCH_INPUT = (By.ID, "search-key")
+    # search button
+    SEARCH_BUTTON = (By.CLASS_NAME, "search-button")
+    # search results
+    SEARCH_RESULTS = (By.CLASS_NAME, "_18_85")

@@ -14,29 +14,9 @@ class LoginTest(BaseTest):
         """
         TC 002 : User is not registered
         """
-        home_page = self.homepage
-        sleep(4)
-        # conditionally locate first pop-up and click it
-        if self.driver.find_element(*PopUpsLocators.COOKIES_BTN):
-            el = self.driver.find_element(*PopUpsLocators.COOKIES_BTN)
-            el.click()
-            sleep(1)
-        else:
-            pass
-        # conditionally locate second pop-up and click it
-        if self.driver.find_element(*PopUpsLocators.COOKIES_BTN2):
-            el1 = self.driver.find_element(*PopUpsLocators.COOKIES_BTN2)
-            el1.click()
-            sleep(1)
-        else:
-            pass
-        # conditionally locate third pop-up and click it
-        if self.driver.find_element(*PopUpsLocators.DISCOUNT_AD_BTN):
-            el2 = self.driver.find_element(*PopUpsLocators.DISCOUNT_AD_BTN)
-            el2.click()
-            sleep(1)
-        else:
-            pass
+        sleep(2)
+        home_page = self.homepage.get_rid_of_popups()
+
         # 0. Locate the login panel
         el0 = self.driver.find_element(*HomePageLocators.HOVER_ACCOUNT)
         ActionChains(self.driver) \
@@ -51,12 +31,12 @@ class LoginTest(BaseTest):
         el1 = self.driver.find_element(*HomePageLocators.LOGIN_BOX)
         # 2. Put in an email
         el1.send_keys(self.testdata.email)
-        sleep(3)
+        sleep(1)
         # 3. Locate the box for password
         el2 = self.driver.find_element(*HomePageLocators.PASSWORD_BOX)
         # 4. Put in a password
         el2.send_keys(self.testdata.password)
-        sleep(3)
+        sleep(1)
         # 4. Locate the button to login
         el3 = self.driver.find_element(*HomePageLocators.LOGIN_BTN)
         el3.click()
