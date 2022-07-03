@@ -20,6 +20,11 @@ class SearchingTest(BaseTest):
         # locate the results
         results = home_page.locate_results()
         # test if the results have product name at least once
+        result = 0
         for word in results:
-            result = word.find("zegarek")
-            self.assertGreater(result, 0)
+            if word.find("zegarek"):
+                result = result +1
+            else:
+                pass
+            return result
+        self.assertGreater(result, 0)
